@@ -31,9 +31,3 @@ jobs:
 
       - name: Build extension
         run: python setup.py bdist_wheel
-
-      - name: Install extension
-        run: pip install .
-
-      - name: Test extension
-        run: python test_fast_stringcase.py

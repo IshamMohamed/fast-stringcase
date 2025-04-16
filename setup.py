@@ -14,7 +14,7 @@ with open("readme.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="fast_stringcase",
-    version="1.2.0",
+    version="1.2.0b1",
     description="C extension for string case conversions. The logic is ported from and based on stringcase == 1.2.0",
     long_description=long_description,
     long_description_content_type="text/markdown",

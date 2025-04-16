@@ -4,7 +4,7 @@ This project provides a fast and efficient way to convert strings between differ
 ## Local Deployment and Testing
 To build and install use the following:
 ```bash
-python setup.py build
+python -m build
 pip install .
 ```
 
