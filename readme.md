@@ -10,7 +10,7 @@ pip install .
 
 To run unit tests:
 ```bash
-python setup.py test
+python test_fast_stringcase.py
 ```
 
 ## Usage

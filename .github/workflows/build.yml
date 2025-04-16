@@ -36,4 +36,4 @@ jobs:
         run: pip install .
 
       - name: Test extension
-        run: python setup.py test
+        run: python test_fast_stringcase.py
