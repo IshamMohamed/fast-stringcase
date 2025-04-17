@@ -20,6 +20,9 @@ setup(
     long_description_content_type="text/markdown",
     author="Isham Mohamed",
     author_email="isham.iqbal@icloud.com",
+    license='MIT',
+    url='https://github.com/IshamMohamed/fast-stringcase/',
+    download_url='https://pypi.org/project/fast-stringcase/',
     ext_modules=[module],
     packages=["fast_stringcase"],
     classifiers=[
