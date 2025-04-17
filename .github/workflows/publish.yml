@@ -106,21 +106,21 @@ jobs:
     
     steps:
       - name: Download Linux wheels
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
-          name: linux-wheels
+          pattern: linux-wheels-*
           path: ./wheelhouse
 
       - name: Download macOS wheels
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
-          name: macos-wheels
+          pattern: macos-wheels-*
           path: ./wheelhouse
 
       - name: Download Windows wheels
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
-          name: windows-wheels
+          pattern: windows-wheels-*
           path: ./wheelhouse
 
       - name: Install Twine
