@@ -20,3 +20,8 @@ import fast_stringcase
 
 print(stringcase.titlecase('FooBarBaz'))  # Output: Foo Bar Baz
 ```
+
+## Performance
+![image](https://github.com/user-attachments/assets/6412a643-364e-4e29-a00a-a6ee93a3f3d8)
+
+Generally, this package seems 20 times faster then stringcase package.
