@@ -105,23 +105,12 @@ jobs:
     if: startsWith(github.ref, 'refs/tags')
     
     steps:
-      - name: Download Linux wheels
+      - name: Download all wheels
         uses: actions/download-artifact@v4
         with:
-          pattern: linux-wheels-*
+          pattern: "*-wheels-*"
           path: ./wheelhouse
-
-      - name: Download macOS wheels
-        uses: actions/download-artifact@v4
-        with:
-          pattern: macos-wheels-*
-          path: ./wheelhouse
-
-      - name: Download Windows wheels
-        uses: actions/download-artifact@v4
-        with:
-          pattern: windows-wheels-*
-          path: ./wheelhouse
+          merge-multiple: true
 
       - name: Install Twine
         run: |
