@@ -34,7 +34,7 @@ jobs:
       - name: Upload Linux wheels
         uses: actions/upload-artifact@v4
         with:
-          pattern: linux-wheels-${{ strategy.job-index }}
+          name: linux-wheels-${{ strategy.job-index }}
           path: wheelhouse/*
 
   build-macos:
@@ -65,7 +65,7 @@ jobs:
       - name: Upload macOS wheels
         uses: actions/upload-artifact@v4
         with:
-          pattern: macos-wheels-${{ strategy.job-index }}
+          name: macos-wheels-${{ strategy.job-index }}
           path: wheelhouse/*
 
   build-windows:
@@ -96,7 +96,7 @@ jobs:
       - name: Upload Windows wheels
         uses: actions/upload-artifact@v4
         with:
-          pattern: windows-wheels-${{ strategy.job-index }}
+          name: windows-wheels-${{ strategy.job-index }}
           path: wheelhouse/*
 
   publish:
