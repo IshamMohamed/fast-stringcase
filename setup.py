@@ -15,7 +15,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="fast_stringcase",
-    version="1.2.0b4",
+    version="1.2.0b5",
     description="C extension for string case conversions. The logic is ported from and based on stringcase == 1.2.0",
     long_description=long_description,
     long_description_content_type="text/markdown",
