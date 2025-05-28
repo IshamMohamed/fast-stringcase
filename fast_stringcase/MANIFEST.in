@@ -1,0 +1,2 @@
+include fast_stringcase/fast_stringcase.pyi
+include fast_stringcase/py.typed

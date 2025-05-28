@@ -15,7 +15,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="fast_stringcase",
-    version="1.2.0b5",
+    version="1.2.0b6",
     description="C extension for string case conversions. The logic is ported from and based on stringcase == 1.2.0",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -26,7 +26,7 @@ setup(
     download_url='https://pypi.org/project/fast-stringcase/',
     ext_modules=[module],
     packages=["fast_stringcase"],
-    package_data={'fast_stringcase': ['fast_stringcase.pyi']},
+    package_data={'fast_stringcase': ['fast_stringcase.pyi','py.typed']},
     classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
