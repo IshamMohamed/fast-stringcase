@@ -26,6 +26,7 @@ setup(
     download_url='https://pypi.org/project/fast-stringcase/',
     ext_modules=[module],
     packages=["fast_stringcase"],
+    package_data={'fast_stringcase': ['fast_stringcase.pyi']},
     classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
