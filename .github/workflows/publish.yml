@@ -121,10 +121,15 @@ jobs:
           pip install cibuildwheel
 
       - name: Build wheels
+        env:
+          CIBW_ARCHS_MACOS: x86_64
+          PYTHON_VERSION: ${{ matrix.python-version }}
         run: |
-          cibuildwheel --output-dir wheelhouse
+          PYTHON_TAG=$(echo $PYTHON_VERSION | tr -d '.')
+          export CIBW_BUILD="cp${PYTHON_TAG}-*"
+          cibuildwheel --output-dir wheelhouse --verbose
 
-      - name: Upload macOS wheels
+      - name: Upload macOS Intel wheels
         uses: actions/upload-artifact@v4
         with:
           name: macos-intel-wheels-${{ strategy.job-index }}
