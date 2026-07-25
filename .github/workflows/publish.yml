@@ -138,7 +138,7 @@ jobs:
             export CIBW_BUILD="cp313-*"
           fi
 
-          cibuildwheel --output-dir wheelhouse --verbose
+          cibuildwheel --output-dir wheelhouse
 
       - name: Upload macOS Intel wheels
         uses: actions/upload-artifact@v4
