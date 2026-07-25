@@ -193,7 +193,7 @@ jobs:
           "
 
       - name: Check with twine
-        run: twine check wheelhouse/*
+        run: python -m pip install twine && twine check wheelhouse/*
 
       - name: Inspect one wheel's metadata
         run: |
