@@ -181,12 +181,12 @@ jobs:
       - name: Validate wheel filenames
         run: |
           python -c "
-          from wheel.filename import parse_filename
+          from packaging.utils import parse_wheel_filename
           import os
           for f in os.listdir('wheelhouse'):
             if f.endswith('.whl'):
               try:
-                parsed = parse_filename(f)
+                parsed = parse_wheel_filename(f)
                 print(f'✓ {f} -> {parsed}')
               except Exception as e:
                 print(f'✗ {f} -> ERROR: {e}')
