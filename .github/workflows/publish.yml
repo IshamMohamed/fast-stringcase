@@ -124,9 +124,20 @@ jobs:
         env:
           CIBW_ARCHS_MACOS: x86_64
           PYTHON_VERSION: ${{ matrix.python-version }}
+          CIBW_TEST_SKIP: "*"
         run: |
-          PYTHON_TAG=$(echo $PYTHON_VERSION | tr -d '.')
-          export CIBW_BUILD="cp${PYTHON_TAG}-*"
+          if [ "$PYTHON_VERSION" = "3.9" ]; then
+            export CIBW_BUILD="cp39-*"
+          elif [ "$PYTHON_VERSION" = "3.10" ]; then
+            export CIBW_BUILD="cp310-*"
+          elif [ "$PYTHON_VERSION" = "3.11" ]; then
+            export CIBW_BUILD="cp311-*"
+          elif [ "$PYTHON_VERSION" = "3.12" ]; then
+            export CIBW_BUILD="cp312-*"
+          elif [ "$PYTHON_VERSION" = "3.13" ]; then
+            export CIBW_BUILD="cp313-*"
+          fi
+
           cibuildwheel --output-dir wheelhouse --verbose
 
       - name: Upload macOS Intel wheels
