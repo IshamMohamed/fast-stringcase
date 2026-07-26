@@ -28,9 +28,9 @@ jobs:
           pip install cibuildwheel
 
       - name: Build wheels
-        env:
-          CIBW_BUILD: "cp${{ matrix.python-version | replace('.', '') }}-*"
-        run: cibuildwheel --output-dir wheelhouse
+        run: |
+          export CIBW_BUILD="cp$(echo ${{ matrix.python-version }} | tr -d '.')-*"
+          cibuildwheel --output-dir wheelhouse
 
       - name: Upload Linux wheels
         uses: actions/upload-artifact@v4
@@ -60,9 +60,9 @@ jobs:
           pip install cibuildwheel
 
       - name: Build wheels
-        env:
-          CIBW_BUILD: "cp${{ matrix.python-version | replace('.', '') }}-*"
-        run: cibuildwheel --output-dir wheelhouse
+        run: |
+          export CIBW_BUILD="cp$(echo ${{ matrix.python-version }} | tr -d '.')-*"
+          cibuildwheel --output-dir wheelhouse
 
       - name: Upload Linux Arm wheels
         uses: actions/upload-artifact@v4
@@ -92,9 +92,9 @@ jobs:
           pip install cibuildwheel
 
       - name: Build wheels
-        env:
-          CIBW_BUILD: "cp${{ matrix.python-version | replace('.', '') }}-*"
-        run: cibuildwheel --output-dir wheelhouse
+        run: |
+          export CIBW_BUILD="cp$(echo ${{ matrix.python-version }} | tr -d '.')-*"
+          cibuildwheel --output-dir wheelhouse
 
       - name: Upload macOS wheels
         uses: actions/upload-artifact@v4
@@ -125,9 +125,10 @@ jobs:
 
       - name: Build wheels
         env:
-          CIBW_BUILD: "cp${{ matrix.python-version | replace('.', '') }}-*"
           CIBW_ARCHS_MACOS: x86_64
-        run: cibuildwheel --output-dir wheelhouse
+        run: |
+          export CIBW_BUILD="cp$(echo ${{ matrix.python-version }} | tr -d '.')-*"
+          cibuildwheel --output-dir wheelhouse
 
       - name: Upload macOS wheels
         uses: actions/upload-artifact@v4
