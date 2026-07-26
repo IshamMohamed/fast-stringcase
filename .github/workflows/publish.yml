@@ -29,7 +29,7 @@ jobs:
 
       - name: Build wheels
         env:
-          CIBW_BUILD: "cp$(echo ${{ matrix.python-version }} | tr -d '.')-*"
+          CIBW_BUILD: "cp${{ matrix.python-version | replace('.', '') }}-*"
         run: cibuildwheel --output-dir wheelhouse
 
       - name: Upload Linux wheels
@@ -61,7 +61,7 @@ jobs:
 
       - name: Build wheels
         env:
-          CIBW_BUILD: "cp$(echo ${{ matrix.python-version }} | tr -d '.')-*"
+          CIBW_BUILD: "cp${{ matrix.python-version | replace('.', '') }}-*"
         run: cibuildwheel --output-dir wheelhouse
 
       - name: Upload Linux Arm wheels
@@ -93,7 +93,7 @@ jobs:
 
       - name: Build wheels
         env:
-          CIBW_BUILD: "cp$(echo ${{ matrix.python-version }} | tr -d '.')-*"
+          CIBW_BUILD: "cp${{ matrix.python-version | replace('.', '') }}-*"
         run: cibuildwheel --output-dir wheelhouse
 
       - name: Upload macOS wheels
@@ -125,7 +125,7 @@ jobs:
 
       - name: Build wheels
         env:
-          CIBW_BUILD: "cp$(echo ${{ matrix.python-version }} | tr -d '.')-*"
+          CIBW_BUILD: "cp${{ matrix.python-version | replace('.', '') }}-*"
           CIBW_ARCHS_MACOS: x86_64
         run: cibuildwheel --output-dir wheelhouse
 
@@ -158,7 +158,7 @@ jobs:
 
       - name: Build wheels
         env:
-          CIBW_BUILD: "cp$(echo ${{ matrix.python-version }} | tr -d '.')-*"
+          CIBW_BUILD: "cp${{ matrix.python-version | replace('.', '') }}-*"
         run: cibuildwheel --output-dir wheelhouse
 
       - name: Upload Windows wheels
