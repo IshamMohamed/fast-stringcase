@@ -1,6 +1,10 @@
 # Fast Stringcase Project
 This project provides a fast and efficient way to convert strings between different cases. This is based on stringcase version 1.2.0. This is why the version has been kept same.
 
+## Supported Python Versions
+
+This package supports Python **3.9** through **3.14**.
+
 ## Local Deployment and Testing
 To build and install use the following:
 ```bash
