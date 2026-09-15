@@ -215,7 +215,7 @@ jobs:
             echo "Unpacking $whl into inspect"
             python -m wheel unpack "$whl" --dest inspect
           done
-          cat ./inspect/*/dist-info/METADATA
+          cat ./inspect/*/*.dist-info/METADATA
 
       # === END DEBUG ===
 
