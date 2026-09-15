@@ -28,7 +28,9 @@ jobs:
           pip install cibuildwheel
 
       - name: Build wheels
+        shell: bash
         run: |
+          export CIBW_BUILD="cp$(echo ${{ matrix.python-version }} | tr -d '.')-*"
           cibuildwheel --output-dir wheelhouse
 
       - name: Upload Linux wheels
@@ -59,7 +61,9 @@ jobs:
           pip install cibuildwheel
 
       - name: Build wheels
+        shell: bash
         run: |
+          export CIBW_BUILD="cp$(echo ${{ matrix.python-version }} | tr -d '.')-*"
           cibuildwheel --output-dir wheelhouse
 
       - name: Upload Linux Arm wheels
@@ -90,7 +94,9 @@ jobs:
           pip install cibuildwheel
 
       - name: Build wheels
+        shell: bash
         run: |
+          export CIBW_BUILD="cp$(echo ${{ matrix.python-version }} | tr -d '.')-*"
           cibuildwheel --output-dir wheelhouse
 
       - name: Upload macOS wheels
@@ -121,7 +127,11 @@ jobs:
           pip install cibuildwheel
 
       - name: Build wheels
+        shell: bash
+        env:
+          CIBW_ARCHS_MACOS: x86_64
         run: |
+          export CIBW_BUILD="cp$(echo ${{ matrix.python-version }} | tr -d '.')-*"
           cibuildwheel --output-dir wheelhouse
 
       - name: Upload macOS wheels
@@ -152,7 +162,9 @@ jobs:
           pip install cibuildwheel
 
       - name: Build wheels
+        shell: bash
         run: |
+          export CIBW_BUILD="cp$(echo ${{ matrix.python-version }} | tr -d '.')-*"
           cibuildwheel --output-dir wheelhouse
 
       - name: Upload Windows wheels
@@ -160,6 +172,7 @@ jobs:
         with:
           name: windows-wheels-${{ strategy.job-index }}
           path: wheelhouse/*
+
 
   publish:
     runs-on: ubuntu-latest
